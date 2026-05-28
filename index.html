@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハプスブルクシュタイン城ホームページ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/common.js" defer></script>
+  <!-- GOOGLEフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap" rel="stylesheet">
+</head>
+
+<!-- 開発予想 -->
+  <!-- ベースとなるHTML CSSを作成 -->
+  <!-- PHP化 フッターとかヘッダー分ける -->
+  <!-- MYSQL使用 各ページの紐づけ -->
+  
+
+
+
+
+<!-- 構想 -->
+  <!-- 投稿ごとに投稿に使用する写真をフォルダにまとめる -->
+  <!-- 投稿に使用した写真をMYSQLで管理 -->
+  <!-- indexにてランダムで表示 -->
+  <!-- 投稿を消したら紐づく写真もすべて消える形 -->
+
+  <!-- 写真と投稿にタグの機能が欲しいかも -->
+
+
+<!-- 自分用ルール -->
+  <!-- 構造 section -> div -> 色々 -->
+  <!-- 構造はなるべくDIVで囲ってスタイル指定はDIVのクラスで -->
+  <!-- AIに相談後,構造を理解してから使用 -->
+
+
+<!-- クラスルール -->
+ <!-- section section-hero等 -->
+<!-- div div-hero等 -->
+
+
+<body>
+<main>
+  <div class="yoko"> <!-- メインとサイドバー -->
+    <div class="tate"> <!-- 縦(サイドバー除くすべて) -->
+
+      <!-- ヒーロ画像ローテ -->
+      <section id="hero">
+        <div class="heroimgs">
+          <img src="images/index/index4.jpg" alt="">
+          <img src="images/index/index1.jpg" alt="">
+          <img src="images/index/index2.jpg" alt="">
+          <img src="images/index/index3.jpg" alt="">
+          <div class="hero-textbox">
+            <h1>Le temps s'arrête, l'histoire continue.</h1>
+            <p>博物館では味わえないリアルな歴史体験</p>
+          </div>
+        </div>
+      </section>
+    
+      <!-- サイト説明 about -->
+      <section class="hero2">
+        <div class="hero2-1">
+          <div class="hero-2-1-1">
+            <h3>保全から体験へ</h3>
+            <p>私たちはこの貴重な建築を保全し,多くの人々に体験してもらうことを使命としています<br>数々の歴史を残したハプスブルク家の生活の跡シランス城の魅力を伝える公式サイトです。</p>
+          </div>
+        </div>
+        <div class="hero2-2">
+          <img class="hero2-img" src="images/index/index-bottom.jpg" alt="">
+        </div>
+      </section>
+       
+      <section class="info">
+        <div>
+          <p>数々の光り輝く歴史を築いたハプスブルク家の直系分家、ハプスブルクシュタイン一族。 彼らが14世紀中頃、人里離れた幽谷の断崖に礎石を置いたのが、この城の始まりです。 一時は戦を癒やす名目的医療スパ、および帝国同盟の戦略を巡らせる「沈黙の盟約」の秘密会議地として栄華を極めました。しかし18世紀後半、戦乱の流転とともに城主一族が去ったのち、永い眠りについたこの地は精緻な石造建築と強靭な樹木、 そして深い霧が優美に溶け合い、いつしか人々はそこを畏敬を込めて「Château du Silence（シランス城 ＝ 静寂の城）」と呼ぶようになりました。</p>
+        </div>
+      </section>
+
+
+      <!-- お知らせ -->
+       <!-- 更に閲覧を押すと投稿一覧ページに飛ばしたい -->
+      <section class="tour">
+        
+          <h2>見学コース案内</h2>
+          <p>ハプスブルクシュタイン一族の歴史を体感する、3つの見学コースをご用意いたしました。城内は自由に撮影いただけますが、周囲へのご配慮と文化財保護のため、フラッシュ撮影は一律で禁止とさせていただいております。</p>
+              <div class="tour-list">
+                <article class="tour-item">
+                    <div>
+                      <h3>一般解放</h3>
+                      <p class="tour-item--text">幽谷に佇むシランス城の主要エリアを巡る基本コースです。14世紀から続く精緻な石造建築と、城を包み込む深い霧、そして歴史の流転を肌で感じていただけます。初めて来館される方におすすめの、自由散策プランです。</p>
+                      <ul>
+                        <li>自由散策（時間制限なし）</li>
+                        <li>主要エリア・庭園の公開</li>
+                        <li>当日窓口での受付可能</li>
+                      </ul>
+                      <a href="post/2026/..." class="btn-more">詳しく見る</a>
+                    </div>
+                </article>
+
+                <article class="tour-item">
+                    <div>
+                      <h3>ツアーつきコンプリートプラン</h3>
+                      <p class="tour-item--text">専属の歴史ガイドが同行し、普段は立ち入ることができない「沈黙の盟約」が交わされた秘密会議地や、帝国の医療スパ跡地へとご案内します。ハプスブルクシュタイン一族が歴史の裏で果たした役割を深く紐解く、特別な没入体験です。</p>
+                      <ul>
+                        <li>専属の歴史ガイド同行</li>
+                        <li>非公開エリアへの特別入場</li>
+                        <li>完全予約制（少人数催行）</li>
+                      </ul>
+                      <a href="post/2026/..." class="btn-more">詳しく見る</a>
+                    </div>
+                </article>
+
+
+                <article class="tour-item">
+                    <div>
+                      <h3>夜間の探検プラン</h3>
+                      <p class="tour-item--text">月明かりと最小限の灯りのみが灯る、漆黒のシランス城を巡るナイトツアーです。「沈黙の盟約」が眠る夜の会議場や、深い雾に包まれた中庭を歩きながら、五感を研ぎ澄まして城の「息遣い」を体感する、少しスリリングで幻想的な夜の特別公開です。</p>
+                      <ul>
+                        <li>夜間限定の特別公開</li>
+                        <li>館内ランタン貸出あり</li>
+                        <li>事前予約必須</li>
+                      </ul>
+                      <a href="post/2026/..." class="btn-more">詳しく見る</a>
+                    </div>
+                </article>
+ 
+                
+              </div>
+
+      </section>
+
+
+
+
+
+      <!-- 歴史 -->
+
+      <section>
+        <h2>シランス城の歴史</h2>
+        <p>どうたらこたらでなんたらかんたら</p>
+      </section>
+
+
+      <!-- 館内案内 -->
+      <section>
+        <h2>館内案内</h2>
+        <p>見どころと歴史が詰まったポイントの紹介</p>
+
+        <div class="map-all">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" id="classic-castle-map">
+    <style>
+      /* デザインシステム */
+      .bg-dark { fill: #0f130f; }
+      .castle-moat { fill: none; stroke: #1d261d; stroke-width: 2; stroke-dasharray: 8 4; }
+      
+      /* 城壁と一般の部屋 */
+      .wall-thick { fill: none; stroke: #3a473a; stroke-width: 5; stroke-linejoin: round; }
+      .wall-inner { fill: none; stroke: #242e24; stroke-width: 2; }
+      .room-base { fill: #161e16; stroke: #253325; stroke-width: 1.5; transition: all 0.3s ease; }
+      .corridor { fill: #1d261d; }
+  
+      /* 連動ギミック用 */
+      .interactive-spot { cursor: pointer; }
+      .pin-core { fill: #4a5e4a; stroke: #ffffff; stroke-width: 1.5; transition: all 0.3s ease; }
+      .pin-pulse { fill: none; stroke: #ff3b3b; stroke-width: 1; opacity: 0; transition: all 0.3s ease; }
+  
+   
+      /* JavaScript連動時のアクティブ状態（シンプルな赤点灯のみ） */
+      .interactive-spot.is-active .room-base {
+    fill: #223022;      /* 選択された部屋の床を少し明るく */
+    stroke: #5a735a;    /* 部屋の境界線を少し明るく */
+}
+
+.interactive-spot.is-active .pin-core {
+    fill: #ff3b3b;      /* ドットを赤くする */
+    stroke: #ffffff;    /* 白いフチは維持して見やすく */
+}
+
+
+    </style>
+  
+    <rect width="800" height="600" class="bg-dark" />
+    
+    <path d="M 100,80 L 700,80 L 750,520 L 50,520 Z" class="castle-moat" />
+  
+    <g id="chateau-structure">
+      
+      <rect x="200" y="150" width="400" height="300" class="room-base" />
+      
+      <circle cx="200" cy="150" r="35" class="room-base" />
+      <circle cx="200" cy="150" r="12" class="room-base corridor" />
+      <circle cx="600" cy="150" r="35" class="room-base" />
+      <circle cx="600" cy="150" r="12" class="room-base corridor" />
+      <circle cx="200" cy="450" r="35" class="room-base" />
+      <circle cx="200" cy="450" r="12" class="room-base corridor" />
+      <circle cx="600" cy="450" r="35" class="room-base" />
+      <circle cx="600" cy="450" r="12" class="room-base corridor" />
+  
+      <path d="M 350,450 L 350,500 L 450,500 L 450,450 Z" class="room-base" />
+      <entry-line x1="400" y1="500" x2="400" y2="470" stroke="#242e24" stroke-width="3" />
+  
+      <rect x="375" y="150" width="50" height="300" class="room-base corridor" />
+      <line x1="200" y1="250" x2="375" y2="250" class="wall-inner" />
+      <line x1="200" y1="350" x2="375" y2="350" class="wall-inner" />
+      <line x1="425" y1="250" x2="600" y2="250" class="wall-inner" />
+      <line x1="425" y1="350" x2="600" y2="350" class="wall-inner" />
+      <line x1="285" y1="150" x2="285" y2="250" class="wall-inner" />
+      <line x1="515" y1="350" x2="515" y2="450" class="wall-inner" />
+  
+      <path d="
+        M 200,115 
+        L 600,115 
+        A 35,35 0 0,1 635,150
+        L 635,450
+        A 35,35 0 0,1 600,485
+        L 450,485 L 450,500 L 350,500 L 350,485 L 200,485
+        A 35,35 0 0,1 165,450
+        L 165,150
+        A 35,35 0 0,1 200,115 Z" 
+        class="wall-thick" />
+    </g>
+  
+    <g class="interactive-spot" data-location="spot1" id="map-spot-council">
+      <rect x="320" y="150" width="160" height="70" class="room-base" />
+      <circle cx="400" cy="185" r="16" fill="none" stroke="#2d3b2d" stroke-width="2" />
+      <circle cx="400" cy="185" r="14" class="pin-pulse" />
+      <circle cx="400" cy="185" r="6" class="pin-core" />
+    </g>
+  
+    <g class="interactive-spot" data-location="spot2" id="map-spot-spa">
+      <rect x="425" y="250" width="175" height="100" class="room-base" />
+      <rect x="465" y="275" width="95" height="50" fill="none" stroke="#2d3b2d" stroke-width="1.5" />
+      <circle cx="512" cy="300" r="14" class="pin-pulse" />
+      <circle cx="512" cy="300" r="6" class="pin-core" />
+    </g>
+  
+    <g class="interactive-spot" data-location="spot3" id="map-spot-library">
+      <rect x="200" y="250" width="175" height="100" class="room-base" />
+      <line x1="220" y1="275" x2="260" y2="275" stroke="#242e24" stroke-width="2" />
+      <line x1="220" y1="300" x2="260" y2="300" stroke="#242e24" stroke-width="2" />
+      <line x1="220" y1="325" x2="260" y2="325" stroke="#242e24" stroke-width="2" />
+      <circle cx="310" cy="300" r="14" class="pin-pulse" />
+      <circle cx="310" cy="300" r="6" class="pin-core" />
+    </g>
+  
+  </svg>
+  
+  
+  
+  
+  
+  
+          <div class="article-box">
+            <article data-location="spot1">
+              <div class="img-box"><img src="images/index/map1.jpg" alt=""></div>
+              <div class="text-box">
+                <h3>外装</h3>
+                <p>14世紀中頃の堅牢な石造りの基盤に、ルネサンス期の優美な息吹が融合したシランス城の正門。かつて一族の栄華を象徴した円形の吹き抜け空間には、当時の細密な石彫意匠が色濃く残されています。中央に静かに佇む乳母車は、流転する時代の記憶を今に伝える貴重な遺物です。
+                </p>
+              </div>
+            </article>
+            <article data-location="spot2">
+              <div class="img-box"><img src="images/index/map3.jpg" alt=""></div>
+              <div class="text-box">
+                <h3>正面玄関</h3>
+                <p>この城の入口となる玄関は円形の吹き抜けと美しい家具が織りなす空間となっています。中央には当時つかわれた乳母車がのこされていて,非常に人気のフロアです。
+                </p>
+              </div>
+            </article>
+            <article data-location="spot3">
+              <div class="img-box"><img src="images/index/map2.jpg" alt=""></div>
+              <div class="text-box">
+                <h3>食卓</h3>
+                <p>かつての食器や装飾が一番残されたこの空間はあのヨーゼフ2世も訪れたとされています。
+                </p>
+              </div>
+            </article>
+            <article data-location="spot1">
+              <div class="img-box"><img src="images/index/map4.jpg" alt=""></div>
+              <div class="text-box">
+                <h3>教会</h3>
+                <p>この城には居住者向けの教会が用意されていました。壮大で華やかなステンドグラスは健在で,窓からはわずかに植物が入り込んでいます。当時の祈りの雰囲気をよく表した紋章も魅力的です。
+                </p>
+              </div>
+            </article>
+            <article data-location="spot2">
+              <div class="img-box"><img src="images/index/map5.jpg" alt=""></div>
+              <div class="text-box">
+                <h3>外門のカリアティード</h3>
+                <p>外がわの森に位置するこの建築は意匠〇〇によって作られたカリアティードが緑に包まれています。
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 館内案内 -->
+      <section>
+        <h2>ギャラリー
+        </h2>
+      </section>
+
+
+      <!-- お問い合わせ -->
+      <section>
+        <h2>お問い合わせ
+        </h2>
+      </section>
+
+
+    </div>
+  
+
+<!------------------------------
+          サイドバー
+--------------------------------->
+    <aside>
+      <!-- ロゴ -->
+      <div class="logo-box">
+        <a class="logo" href="post/2026/投稿１(仮)/post.html">
+          Château du Silence
+        </a>
+      </div>
+
+      <!-- メニュ -->
+      <div class="menu-box">
+        <ul>
+          <li>シランス城とは<span class="en">About</span></li>
+          <li>お知らせ<span class="en">News</span></li>
+          <li>歴史<span class="en">History</span></li>
+          <li>館内案内<span class="en">Inside</span></li>
+          <li>ギャラリー<span class="en">Gallery</span></li>
+          <li>お問い合わせ<span class="en">Contact</span></li>
+        </ul>
+      </div>
+
+      <!-- SNSリンク -->
+      <div class="sns-box">
+        <ul>
+          <li><a href=""><img src="images/index/SNSアイコン/instagram.svg" alt=""></a></li>
+          <li><a href=""><img src="images/index/SNSアイコン/reddit.svg" alt=""></a></li>
+          <li><a href=""><img src="images/index/SNSアイコン/x.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  
+
+</main>
+
+
+
+<!-- フッター -->
+ <!-- ロゴ SNSリンク 権利関係? -->
+<footer>
+  <div class="D-footer-logo">
+    <a class="logo" href="post/2026/投稿１(仮)/post.html">
+      <img class="logo1" src="images/index/IKOU ロゴ.png" alt="ロゴ">
+    </a>
+  </div>
+  <div class="D-footer-SNS">
+    <a href="">
+      <img src="images/index/SNSアイコン/instagram.svg" alt="">
+    </a>
+        <a href="">
+      <img src="images/index/SNSアイコン/x.svg" alt="">
+    </a>
+        <a href="">
+      <img src="images/index/SNSアイコン/reddit.svg" alt="">
+    </a>
+  </div>
+  <div class="D-copyright"></div>
+
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>
