@@ -77,23 +77,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ロゴ画像
-const logo1 = document.querySelector('.logo1');
-const logo2 = document.querySelector('.logo2');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) {
-    // 100px以上スクロールした時
-    logo1.classList.add('is-shrunk');
-    logo2.classList.add('is-shrunk');
-   
-  } else {
-    // 戻った時
-    logo1.classList.remove('is-shrunk');
-    logo2.classList.remove('is-shrunk');
-
-  }
-});
 
 
 // map 応じた場所にポインタをつけるJS
@@ -131,4 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+
+// サイトを開いたときに徐々に表示するやつ
+window.addEventListener('load', () => {
+    const overlay = document.getElementById('loading-overlay');
+    
+    // loadedクラスをつけてフェードアウトを開始
+    overlay.classList.add('loaded');
+    
+    // アニメーションが終わる1.5秒後に、要素自体を非表示（display: none）にして完全に消す
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 1500); 
 });

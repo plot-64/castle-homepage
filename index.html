@@ -40,8 +40,9 @@
  <!-- section section-hero等 -->
 <!-- div div-hero等 -->
 
-
+<!-- 構造とFLEXでほとんど行けそう いいねーーー -->
 <body>
+  <div id="loading-overlay"></div>
 <main>
   <div class="yoko"> <!-- メインとサイドバー -->
     <div class="tate"> <!-- 縦(サイドバー除くすべて) -->
@@ -49,10 +50,10 @@
       <!-- ヒーロ画像ローテ -->
       <section id="hero">
         <div class="heroimgs">
+          <img src="images/index/index3.jpg" alt="">
           <img src="images/index/index4.jpg" alt="">
           <img src="images/index/index1.jpg" alt="">
           <img src="images/index/index2.jpg" alt="">
-          <img src="images/index/index3.jpg" alt="">
           <div class="hero-textbox">
             <h1>Le temps s'arrête, l'histoire continue.</h1>
             <p>博物館では味わえないリアルな歴史体験</p>
@@ -64,6 +65,7 @@
       <section class="hero2">
         <div class="hero2-1">
           <div class="hero-2-1-1">
+            <p class="BackgroundTypography">Expérience</p>
             <h3>保全から体験へ</h3>
             <p>私たちはこの貴重な建築を保全し,多くの人々に体験してもらうことを使命としています<br>数々の歴史を残したハプスブルク家の生活の跡シランス城の魅力を伝える公式サイトです。</p>
           </div>
@@ -85,7 +87,7 @@
       <section class="tour">
         
           <h2>見学コース案内</h2>
-          <p>ハプスブルクシュタイン一族の歴史を体感する、3つの見学コースをご用意いたしました。城内は自由に撮影いただけますが、周囲へのご配慮と文化財保護のため、フラッシュ撮影は一律で禁止とさせていただいております。</p>
+          <p>ハプスブルクシュタイン一族の歴史を体感する、3つの見学コースをご用意いたしました。<br>城内は自由に撮影いただけますが、周囲へのご配慮と文化財保護のため、フラッシュ撮影は一律で禁止とさせていただいております。</p>
               <div class="tour-list">
                 <article class="tour-item">
                     <div>
@@ -136,19 +138,14 @@
 
 
 
-      <!-- 歴史 -->
-
-      <section>
-        <h2>シランス城の歴史</h2>
-        <p>どうたらこたらでなんたらかんたら</p>
-      </section>
-
-
+      
+      
       <!-- 館内案内 -->
-      <section>
+      <section class="guide">
         <h2>館内案内</h2>
-        <p>見どころと歴史が詰まったポイントの紹介</p>
-
+        <p>「沈黙の城」と呼ばれるこの場所には、数々の隠された物語が眠っています。霧深い庭園から非公開の会議室まで、シランス城の全容を紐解くための歩き方をご案内します。</p>
+        
+        <!-- マップ SVGでポインタのいちもすべて管理 -->
         <div class="map-all">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" id="classic-castle-map">
     <style>
@@ -166,8 +163,8 @@
       .interactive-spot { cursor: pointer; }
       .pin-core { fill: #4a5e4a; stroke: #ffffff; stroke-width: 1.5; transition: all 0.3s ease; }
       .pin-pulse { fill: none; stroke: #ff3b3b; stroke-width: 1; opacity: 0; transition: all 0.3s ease; }
-  
-   
+      
+      
       /* JavaScript連動時のアクティブ状態（シンプルな赤点灯のみ） */
       .interactive-spot.is-active .room-base {
     fill: #223022;      /* 選択された部屋の床を少し明るく */
@@ -211,11 +208,11 @@
       <line x1="515" y1="350" x2="515" y2="450" class="wall-inner" />
   
       <path d="
-        M 200,115 
-        L 600,115 
-        A 35,35 0 0,1 635,150
-        L 635,450
-        A 35,35 0 0,1 600,485
+      M 200,115 
+      L 600,115 
+      A 35,35 0 0,1 635,150
+      L 635,450
+      A 35,35 0 0,1 600,485
         L 450,485 L 450,500 L 350,500 L 350,485 L 200,485
         A 35,35 0 0,1 165,450
         L 165,150
@@ -246,9 +243,9 @@
       <circle cx="310" cy="300" r="6" class="pin-core" />
     </g>
   
-  </svg>
+         </svg>
   
-  
+        <!-- ここまでSVG -->
   
   
   
@@ -297,10 +294,32 @@
           </div>
         </div>
       </section>
+      
+      <!-- 歴史 -->
+      
+      <section class="history">
+        <div class="none"><!-- 空白の空間 --></div>
+        <div class="history-box">
+          <h2>1750年</h2>
+          <p>〇〇によってマルマのため建築。当時は…</p>
+        </div>
+        <div>
+          <h2>1800年</h2>
+          <p>〇〇せんそうの標的にもなった〇〇。には損害も受け</p>
+        </div>
+        <div class="history-box">
+          <h2>1750年</h2>
+          <p>〇〇によってマルマのため建築。当時は…</p>
+        </div>
+        <div>
+          <h2>1800年</h2>
+          <p>〇〇せんそうの標的にもなった〇〇。には損害も受け</p>
+        </div>
 
+      </section>
 
-
-      <!-- 館内案内 -->
+      
+      
       <section>
         <h2>ギャラリー
         </h2>
@@ -331,12 +350,77 @@
       <!-- メニュ -->
       <div class="menu-box">
         <ul>
-          <li>シランス城とは<span class="en">About</span></li>
-          <li>お知らせ<span class="en">News</span></li>
-          <li>歴史<span class="en">History</span></li>
-          <li>館内案内<span class="en">Inside</span></li>
-          <li>ギャラリー<span class="en">Gallery</span></li>
-          <li>お問い合わせ<span class="en">Contact</span></li>
+          <li>
+            <div class="menu-text-box">
+              <span class="jp">シランス城とは</span>
+              <span class="en">About</span>
+            </div>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M22 20v-9H2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z"/>
+  <path d="M18 11V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3H10V4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v7"/>
+  <path d="M12 22v-4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v4"/>
+</svg>
+</span>
+          </li>
+          <li>
+           <div class="menu-text-box">
+              <span class="jp">見学コース</span>
+              <span class="en">Tour</span>
+           </div>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="6" cy="19" r="3"/>
+  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/>
+  <circle cx="18" cy="5" r="3"/>
+</svg>
+</span>
+          </li>
+          <li>
+            <div class="menu-text-box">
+              <span class="jp">館内案内</span>
+              <span class="en">Inside</span>
+            </div>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M13 4h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/>
+  <path d="M2 20V4a2 2 0 0 1 2-2h9v20H4a2 2 0 0 1-2-2Z"/>
+  <circle cx="10" cy="12" r="1"/>
+</svg>
+</span>
+          </li>
+          <li>
+            <div class="menu-text-box">
+              <span class="jp">歴史紹介</span>
+              <span class="en">History</span>
+            </div>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+  <path d="M3 3v5h5"/>
+  <path d="M12 7v5l4 2"/>
+</svg>
+</span>
+          </li>
+          <li>
+            <div class="menu-text-box">
+              <span class="jp">ギャラリー</span>
+              <span class="en">Gallery</span>
+            </div>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+  <circle cx="9" cy="9" r="2"/>
+  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+</svg>
+</span>
+          </li>
+          <li>
+            <div class="menu-text-box">
+              <span class="jp">お問い合わせ</span>
+              <span class="en">Contact</span>
+            </div>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="20" height="16" x="2" y="4" rx="2"/>
+  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+</svg>
+</span>
+          </li>
         </ul>
       </div>
 
@@ -360,21 +444,35 @@
 <!-- フッター -->
  <!-- ロゴ SNSリンク 権利関係? -->
 <footer>
+  <!-- rogo -->
   <div class="D-footer-logo">
     <a class="logo" href="post/2026/投稿１(仮)/post.html">
-      <img class="logo1" src="images/index/IKOU ロゴ.png" alt="ロゴ">
+      Château du Silence
     </a>
   </div>
+  <!-- sns link -->
   <div class="D-footer-SNS">
-    <a href="">
-      <img src="images/index/SNSアイコン/instagram.svg" alt="">
-    </a>
+    <ul>
+      <li>
         <a href="">
-      <img src="images/index/SNSアイコン/x.svg" alt="">
-    </a>
+          <img src="images/index/SNSアイコン/instagram.svg" alt="">
+        </a>
+      </li>
+      <li>
         <a href="">
-      <img src="images/index/SNSアイコン/reddit.svg" alt="">
-    </a>
+          <img src="images/index/SNSアイコン/x.svg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/index/SNSアイコン/reddit.svg" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- コピーライト -->
+  <div class="D-copyright">
+   &copy; 2023-2026 Château du Silence
   </div>
   <div class="D-copyright"></div>
 
