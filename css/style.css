@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html {
+    scroll-behavior:smooth  /*コレで移動がスムーズに!!!!!!!!!!*/
+}
+
+
 /* 全ての要素（*）に対して適用 */
 * {
     margin: 0;
@@ -12,6 +17,16 @@ body {
     background-color: #171f17;
     font-family: "Shippori Mincho", serif;
 }    
+/* いらないから一括 */
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+
+
 
 
 
@@ -441,6 +456,15 @@ section.tour > h2,section.tour > p {
 /* ========================================================
    館内案内（インフォメーション）のレイアウト
 ======================================================== */
+
+div.map-all div.map p {
+    font-size: 20px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+
 section.guide {
     background-image: url(../images/index/background.png);
 }
@@ -484,16 +508,24 @@ section.guide {
     margin-bottom: 40px;
 }
 
+
+
+
 /* 1. マップ（左）とカードをまとめる箱（右）を左右に配置する親要素 */
 .map-all {
+    
     display: flex;
-    gap: 40px;               /* マップとカード群の間の横幅の隙間 */
-    align-items: flex-start; /* スクロール追従（sticky）を有効化するために必須 */
+    gap: 40px;               /* マップとカードの間 */
+    align-items: flex-start; /* スクロール追従するため */
     width: 100%;
+}
+.map {
+    display: flex;
+    flex-direction: column;
 }
 
 /* 2. 【左側】独立しているMAPエリアの設定（スクロール追従） */
-.map-all > svg {
+.map {
     width: 45%;              /* 画面の左側45%をマップに割り当て */
     height: auto;
     position: sticky;        /* スクロールしても画面内に留める */
@@ -560,6 +592,9 @@ section.guide {
     color: #d5d9cf;
 }
 
+.guide {
+    padding-bottom: 40px;
+}
 
 /*-------------------
      歴史
@@ -568,24 +603,122 @@ section.guide {
 section.history {
     background-image: url(../images/index/old.png);
     background-attachment: fixed;
-    background-size: cover;       /* 画像をエリア全体に広げる */
-    background-position: center;  /* 画像を中央に配置 */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    text-align: center;
+    position: relative; /* 子要素の絶対配置の基準にするため追加 */
+}
+
+/* タイトルエリアを画面中央に常に固定する */
+.histoire-hero {
+    position: sticky;
+    top: 0;
+    height: 100vh; /* 画面いっぱいの高さにする */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 縦方向の中央揃え */
+    align-items: center;     /* 横方向の中央揃え */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 「創造から衰退まで」の文字（スクロールで消えるようにtransitionを設定） */
+.histoire-hero h2,
+.histoire-hero .BackgroundTypography {
+    position: relative;
+    z-index: 3; /* 黒い幕（z-index: 2）より手前に出す */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.8;
+    font-size: 70px;
+}
+
+/* 歴史のタイトル（サイズや色の微調整） */
+.histoire-hero h2 {
+    font-size: 60px;
+    color: #ffffff; /* シリアスな世界観に合わせて白、または薄いベージュが映えます */
+    margin: 0;
+}
+
+/* 背景を曇らせるための黒い幕（最初は透明） */
+.history-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* 真っ黒 */
+    opacity: 0; /* 最初は曇らせない */
+    z-index: 2; /* 背景画像と文字の間に挟む */
+    transition: opacity 0.5s ease;
+}
+
+/* テキストボックスが重なるように手前に引き上げる */
+.history-box {
+    position: relative;
+    z-index: 10; /* 中央固定されたタイトル（z-index: 1）の上を通過させる */
+    margin-bottom: 300px;
+
+    padding: 40px;
+    border-radius: 4px;
 }
 
 section.history div.none {
-    height: 300px;
+    height: 50vh; /* stickyと連動させるため、1000pxから画面半分の高さ等に調整するとタイミングが掴みやすくなります */
 }
 
-.history-box {
-    margin-bottom: 300px;
+/*-------------------
+     ギャラリー
+------------------*/     
+
+/*-------------------
+     お問い合わせ
+------------------*/   
+.contact {
+    margin-top: 40px;
+}
+.contact h2 {
+    text-align: center;
+}
+.contact-box {
+    margin-top: 30px;
+    width: 60%;
+    margin: 0 auto;
+}
+.contact-box ul {
+    display: flex;
+    justify-content: space-between;
+}
+/* リストのマーカーを消し、余白を調整 */
+.contact-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 各リスト項目の下の余白を確保 */
+.contact-box li {
+  margin-bottom: 20px;
+}
+
+/* ボタンのデザイン */
+.contact-box a {
+  display: inline-block; /* ブロック要素にして余白等を効かせる */
+  padding: 15px 30px;    /* ボタン内部の余白 */
+  background-color: #333; /* 背景色 */
+  color: #fff;           /* 文字色 */
+  text-decoration: none; /* 下線を消す */
+  border-radius: 5px;    /* 角を丸くする */
 }
 
 /*-------------------
      サイドバー
 ------------------*/     
 /*------------ ロゴ----------- */
+.logo-box {
+    margin: 30px;
+}
+aside div.menu-box {
+    margin: auto 0;
+}
 .logo-box {
     display: flex;
     align-items: center;
@@ -595,8 +728,12 @@ section.history div.none {
     text-decoration: none;
     font-size: 30px;
 }
+.logo-box a img{
+    max-width: 60%;
+    max-height: 60%;
+}
 
-aside ul li {
+aside ul li a {
     display: flex;
     align-items: center;    /* 縦位置を揃える */
     justify-content: flex-end; /* 右寄せにする */
@@ -631,20 +768,31 @@ aside {
 }
 
 aside div.logo-box {
-    height: 20%;
+    /* height: 20%; */
 }
 aside div.menu-box {
-    height: 70%;
+    /* height: 70%; */
 }
 aside div.sns-box {
-    height: 10%;
+    /* height: 10%; */
+}
+
+
+aside.is-shrunk div.menu-box {
+    /* height: 80%; */
+    
+}
+aside.is-shrunk div.menu-box ul {
+align-items: center;
+/* margin: auto 0 auto; */
+}
+aside.is-shrunk div.sns-box {
+    display: none;
 }
 
 
 
-
-
-aside ul li {
+aside ul li a{
     font-size: 20px;
     text-align: right;
     color: #ffffff;
@@ -663,7 +811,7 @@ aside {
     z-index: 1005;
 }
 aside ul {
-    margin: auto 0 auto 0;
+    /* margin: auto 0 auto 0; */
     width: 100%;
     padding-right: 30px;
 }
@@ -673,7 +821,7 @@ aside ul {
 aside.is-shrunk {
   width: 10%; /* スクロール後の細い幅 */
 }
-aside.is-shrunk ul li {
+aside.is-shrunk ul li a{
     font-size: 15px;
     margin-bottom: 55px;
 }
@@ -685,7 +833,7 @@ aside.is-shrunk ul li {
 aside ul {
     margin-bottom: 50px;
 }
-aside ul li {
+aside ul li a{
     display: flex;
     line-height: 1.1;
 }
@@ -709,16 +857,29 @@ aside {
     
 }
 aside .logo-box a {
-    margin: 0 30px 0 auto;
+    margin: 0 0 0 30px;
     text-align: center;
     transition: 0.5s;
 }
 
 aside.is-shrunk a {
-    opacity: 0;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 0;
 }
+aside.is-shrunk .sns-box a {
+    opacity: 0;
 
-
+}
+aside.is-shrunk .logo-box .logo {
+    display: none;
+}
+aside .logo-box .logo2 {
+    display: none;
+}
+aside.is-shrunk .logo-box .logo2 {
+    display: inline;
+}
 /* 1. 日本語を消す */
 aside.is-shrunk .menu-text-box .jp {
     display: none !important;
