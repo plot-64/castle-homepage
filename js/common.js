@@ -129,3 +129,56 @@ window.addEventListener('load', () => {
         overlay.style.display = 'none';
     }, 1500); 
 });
+
+
+
+
+
+// 歴史のところ 背景暗くするための
+
+
+window.addEventListener('scroll', function() {
+    // 歴史セクションと、最初のテキストボックスを取得
+    const historySection = document.querySelector('section.history');
+    const firstBox = document.querySelector('.history-box');
+    const titleH2 = document.querySelector('.histoire-hero h2');
+    const titleBg = document.querySelector('.histoire-hero .BackgroundTypography');
+    const overlay = document.querySelector('.history-overlay');
+    
+    if (!historySection || !firstBox) return;
+
+    // 歴史セクションが画面上部に来てからのスクロール量
+    const sectionTop = historySection.getBoundingClientRect().top;
+    
+    // 最初のテキストボックスが画面のどの位置にいるか
+    const boxTop = firstBox.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // 歴史セクションに入ったら演出の計算を開始
+    if (sectionTop <= 0) {
+        // 最初のボックスが画面下部（全体の80%の位置）から中央に近づくまでの進行度を計算 (0から1)
+        const startFade = windowHeight * 0.7;
+        const endFade = windowHeight * 0.4;
+        
+        let progress = (startFade - boxTop) / (startFade - endFade);
+        progress = Math.max(0, Math.min(1, progress)); // 0〜1の間に収める
+
+        // 1. タイトルの透明度（進行度に合わせて 1 から 0 へ）
+        if (titleH2) titleH2.style.opacity = 1 - progress;
+        if (titleBg) titleBg.style.opacity = 0 * (1 - progress); // 元のopacity 0.15 に合わせる
+
+        // 少し上に消えていくような立体感を出す場合（お好みで）
+        if (titleH2) titleH2.style.transform = `translateY(-${progress * 20}px)`;
+
+        // 2. 背景の曇り具合（最大 0.7 くらいまで黒くする）
+        if (overlay) {
+            overlay.style.opacity = progress * 0.7; 
+        }
+    } else {
+        // 歴史セクションより上にいるときは初期状態に戻す
+        if (titleH2) titleH2.style.opacity = 1;
+        if (titleBg) titleBg.style.opacity = 0.8;
+        if (titleH2) titleH2.style.transform = 'translateY(0)';
+        if (overlay) overlay.style.opacity = 0;
+    }
+});
