@@ -413,40 +413,10 @@ section.tour > h2,section.tour > p {
 }
 
 
-/*------------------
-     写真ギャラリー
-------------------*/     
-
-
-
-
-/* 写真ギャラリー：メイソンリーレイアウト */
-.masonry-grid {
-  column-count: 3; /* 横に並べる列数（スマホなら2にするなど調整） */  
-  column-gap: 10px; /* 写真同士の隙間 */
-}  
-
-.masonry-item {
-  break-inside: avoid; /* 写真が途中で次の列に分割されないようにする */  
-  margin-bottom: 10px;
-}  
-
-.masonry-item img {
-  width: 100%;  
-  height: auto; /* 比率を維持して表示 */
-  display: block;
-  transition: transform 0.3s ease;
-}  
-
-/* ホバー演出 */
-.masonry-item img:hover {
-  filter: brightness(0.8);  
-  transform: scale(1.02);
-}  
 
 
 /*------------------
-     見どころ
+見どころ
 ------------------*/    
 .map-all {
     display: flex;
@@ -454,7 +424,7 @@ section.tour > h2,section.tour > p {
 
 
 /* ========================================================
-   館内案内（インフォメーション）のレイアウト
+館内案内（インフォメーション）のレイアウト
 ======================================================== */
 
 div.map-all div.map p {
@@ -657,7 +627,7 @@ section.history {
     position: relative;
     z-index: 10; /* 中央固定されたタイトル（z-index: 1）の上を通過させる */
     margin-bottom: 300px;
-
+    
     padding: 40px;
     border-radius: 4px;
 }
@@ -667,11 +637,107 @@ section.history div.none {
 }
 
 /*-------------------
-     ギャラリー
+ギャラリー
 ------------------*/     
 
+/*------------------
+     写真ギャラリー
+------------------*/     
+
+.gallery h2 {
+    text-align: center;
+    font-size: 70px;
+    opacity: 0.78;
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 20px;
+}
+.gallery p {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+
+
+.masonry-grid {
+  column-count: 3; /* 横に並べる列数（スマホなら2にするなど調整） */  
+  column-gap: 10px; /* 写真同士の隙間 */
+}  
+
+.masonry-item {
+  break-inside: avoid; /* 写真が途中で次の列に分割されないようにする */  
+  margin-bottom: 10px;
+}  
+
+.masonry-item img {
+  width: 100%;  
+  height: auto; /* 比率を維持して表示 */
+  display: block;
+  transition: transform 0.3s ease;
+}  
+
+/* ホバー演出 */
+.masonry-item img:hover {
+  filter: brightness(0.8);  
+  transform: scale(1.02);
+}  
+
+
+
+/*ーーーーーーーーーーーーーーーーーーーー
+ 写真たちが中に入っている親コンテナのグラデーション
+ ーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.masonry-grid {
+    position: relative; /* 子要素（疑似要素）の基準点にする */
+    z-index: 1;         /* 疑似要素を上に重ねるための基準 */
+}
+.masonry-grid {
+    position: relative; /* 子要素（疑似要素）の基準点にする */
+}
+
+/* 親コンテナの前面にグラデーションの膜を貼る */
+.masonry-grid::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 下を基準に配置 */
+    width: 100%;
+    
+    /* グラデーションをかける高さ（写真の下側どれくらいを削るか） */
+    height: 150px; 
+    
+    /* * 上は完全に透明（transparent）で、
+     * 下に向かって背景のダークグリーン（または黒）に滑らかに変化させます。
+     * カラーコードは実際の背景色に合わせて調整してください。
+     */
+    background: linear-gradient(to bottom, transparent, #171f17);
+    
+    /* * コンテンツ（View Moreボタンなど）よりは後ろ、
+     * 写真よりは前に配置するための設定です。
+     */
+    pointer-events: none; /* 下にある写真やリンクの邪魔をしないマジックプロパティ */
+}
+
+
+
+
+/* もっと見る りんく */
+.more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.more a::after {
+
+    content: "＞"; 
+    font-size: 1.8rem;
+    display: inline-block;        /* 回転を有効にするために必要 */
+    transform: rotate(90deg);     /* 右に90度回転させて下向きにする */
+    transform-origin: center;
+}
+
 /*-------------------
-     お問い合わせ
+お問い合わせ
 ------------------*/   
 .contact {
     margin-top: 40px;
@@ -690,13 +756,13 @@ section.history div.none {
 }
 /* リストのマーカーを消し、余白を調整 */
 .contact-box ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 /* 各リスト項目の下の余白を確保 */
 .contact-box li {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 /* ボタンのデザイン */
