@@ -627,15 +627,21 @@ section.history {
     position: relative;
     z-index: 10; /* 中央固定されたタイトル（z-index: 1）の上を通過させる */
     margin-bottom: 300px;
-    
+    text-align: center;
     padding: 40px;
     border-radius: 4px;
+}
+.history-box h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
 }
 
 section.history div.none {
     height: 50vh; /* stickyと連動させるため、1000pxから画面半分の高さ等に調整するとタイミングが掴みやすくなります */
 }
-
+.history-box:last-of-type {
+    padding-bottom: 300px;
+}
 /*-------------------
 ギャラリー
 ------------------*/     
@@ -736,43 +742,58 @@ section.history div.none {
     transform-origin: center;
 }
 
-/*-------------------
-お問い合わせ
-------------------*/   
-.contact {
-    margin-top: 40px;
+/*----------------
+   お問い合わせ
+------------------*/
+
+section.contact {
+    margin-top: 150px;
+    width: 100%;
+    padding: 0 4% 100px;
 }
-.contact h2 {
-    text-align: center;
+
+section.contact h2 {
+    font-size: 26px;
+    border-bottom: 2px solid #3a473a;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
 }
+
 .contact-box {
-    margin-top: 30px;
-    width: 60%;
-    margin: 0 auto;
+    width: 100%;
 }
+
 .contact-box ul {
     display: flex;
-    justify-content: space-between;
-}
-/* リストのマーカーを消し、余白を調整 */
-.contact-box ul {
-    list-style: none;
+    justify-content: space-between; /* これで左右の端に2つのボタンをぴったり配置します */
     padding: 0;
+    margin: 0;
+    list-style: none;
+    /* ⚠️ gap: 40px; ははみ出しの原因になるため完全に削除 */
 }
 
-/* 各リスト項目の下の余白を確保 */
 .contact-box li {
-    margin-bottom: 20px;
+    width: 48%; /* 2つのボタンが48%ずつになり、中央に自動的に4%の隙間が生まれます */
 }
 
-/* ボタンのデザイン */
 .contact-box a {
-  display: inline-block; /* ブロック要素にして余白等を効かせる */
-  padding: 15px 30px;    /* ボタン内部の余白 */
-  background-color: #333; /* 背景色 */
-  color: #fff;           /* 文字色 */
-  text-decoration: none; /* 下線を消す */
-  border-radius: 5px;    /* 角を丸くする */
+    display: block;
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    transition: all 0.3s ease;
+}
+
+.contact-box a:hover {
+    background-color: #ffffff;
+    color: #171f17;
+    border-color: #ffffff;
 }
 
 /*-------------------
@@ -1089,7 +1110,7 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #000000; /* 真っ黒 */
     z-index: 9999;             /* どんな要素よりも手前に配置 */
