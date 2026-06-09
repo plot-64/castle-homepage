@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    /* 100%を超えないように */
+    box-sizing: border-box;
+    color: #ffffff;
+}
+/* サイドバーの構造 */
+.yoko {
+  display: flex;
+}
+.tate {
+  flex: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../../images/index/index3.jpg'); 
+  background-size: cover;
+}
+aside {
+  width: 152px;
+  height: 100vh;
+  position: sticky;
+  background-color: rgb(9, 9, 9);
+  background-attachment: fixed ;  /*背景画像こてい*/
+}
+body {
+  font-family: "Shippori Mincho", serif;
+}
+
+
+
+
+
+
+
+
+
+/*------------------
+     ヒーロー
+------------------*/     
+
+.div-tour-hero-body h1 {
+  width: fit-content;
+  text-align: center;
+  font-size: 4em;
+  margin: 200px auto 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.section-tour-hero {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+/*------------------
+     サイドバー
+------------------*/     
+/*------------ ロゴ----------- */
+.logo-box {
+    margin: 30px;
+}
+aside div.menu-box {
+    margin: auto 0;
+}
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-box a {
+    font-size: 30px;
+}
+.logo-box a img{
+    max-width: 60%;
+    max-height: 60%;
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* 英語の表示調整（左側に寄せるための余白調整） */
+aside ul li .en {
+    margin-left: auto;
+    opacity: 0.7;
+    font-size: 18px;
+}
+
+/* アイコン自体の調整 */
+aside ul li .icon {
+    font-size: 16px;
+    margin-right: 10px;     /* 親要素の右端から少し離す */
+}
+
+
+
+
+
+/* 多分いらないCSSが大量に生き残ってる */
+/* どうすんだろうねコレ */
+
+/* --------------------------------------- */
+aside {
+    background-color: #121612;
+}
+aside ul {
+  list-style: none;
+}
+aside a {
+  text-decoration: none;
+}
+
+aside.is-shrunk div.menu-box ul {
+align-items: center;
+}
+aside.is-shrunk div.sns-box {
+    display: none;
+}
+
+
+
+aside ul li a{
+    font-size: 20px;
+    text-align: right;
+    color: #ffffff;
+    list-style: none;
+    margin-bottom: 40px;
+    transition: 0.5s;
+}
+
+
+
+aside {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 1005;
+}
+aside ul {
+    /* margin: auto 0 auto 0; */
+    width: 100%;
+    padding-right: 30px;
+}
+
+
+/* 【重要】スクロールした時に付与するクラス */
+aside.is-shrunk {
+  width: 152px; /* スクロール後の細い幅 */
+}
+aside.is-shrunk ul li a{
+    font-size: 15px;
+    margin-bottom: 55px;
+}
+.tate.is-expanded {
+    width: 90%;
+}
+
+/* spanが縦に並ぶように */
+aside ul {
+    margin-bottom: 50px;
+}
+aside ul li a{
+    display: flex;
+    line-height: 1.1;
+}
+aside ul li div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+aside ul li span {
+    font-size: 18px;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+aside.is-shrunk ul li span {
+    font-size: 12px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    
+}
+aside .logo-box a {
+    margin: 0 0 0 30px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+aside.is-shrunk a {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 0;
+}
+aside.is-shrunk .sns-box a {
+    opacity: 0;
+
+}
+
+
+
+
+aside.is-shrunk .logo-box .logo2 {
+    display: inline;
+}
+/* 1. 日本語を消す */
+
+/* 2. 英語を大きく */
+aside.is-shrunk .menu-text-box .en {
+    font-size: 18px !important;
+}
+
+/* 3. アイコンを小さく */
+aside.is-shrunk .icon {
+    width: 18px !important;
+    height: 18px !important;  /*インポータント地獄 後で困るのかも*/
+    display: inline-block;
+}
+
+aside.is-shrunk .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+aside.is-shrunk .menu-box ul {
+    padding-right: 10px ;
+}
+
+
+
+
+
+
+/* メニュー横アイコン設定 */
+aside ul li .icon {
+    display: inline-flex; /* svgを中央揃えしやすくする */
+    width: 32px;          /* ここでサイズを制御 */
+    height: 32px;
+    flex-shrink: 0;
+}
+
+aside ul li .icon svg {
+    width: 100% !important;
+    height: 100% !important;}
+
+
+
+
+
+
+
+
+/* あさいどの要素すべてをランディション設定 */
+
+    aside * {
+        transition: inherit;
+    }
+    
+    .sns-box {display: flex;}
+
+
+
+/* SNSアイコン */
+.sns-box img {
+    width: 24px; 
+    height: auto; 
+    filter: brightness(0) invert(1); /*白で表示*/
+}
+/* 楽なCSSの当て方解ってきたぁ たのしー */
+/* 多分クラスを新設したほうが楽 */
+/* 当てたあと確認→デザイン崩れたら詳しく書き直せばだいたい治る */
+.sns-box ul {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0;
+    margin: 0 auto;
+    gap: 30px;        /* アイコンの間隔 */    
+}
+.sns-box ul li:nth-child(3) {
+    margin-right: 30px;
+}

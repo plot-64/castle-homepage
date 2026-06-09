@@ -571,7 +571,7 @@ section.guide {
 ------------------*/ 
 
 section.history {
-    background-image: url(../images/index/old.png);
+    background-image: url(images/index/old.png);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -897,7 +897,7 @@ aside ul {
 
 /* 【重要】スクロールした時に付与するクラス */
 aside.is-shrunk {
-  width: 10%; /* スクロール後の細い幅 */
+  width: 152px; /* スクロール後の細い幅 */
 }
 aside.is-shrunk ul li a{
     font-size: 15px;
