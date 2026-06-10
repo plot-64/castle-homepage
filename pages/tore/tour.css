@@ -43,19 +43,77 @@ body {
   width: fit-content;
   text-align: center;
   font-size: 4em;
-  margin: 200px auto 20px;
+  margin: 100px auto 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.section-tour-hero {
+section {
   width: 90%;
   margin: 0 auto;
+}
+.hero {
+    margin-bottom: 200px;
+
 }
 
 
 /*------------------
+     ヒーローインフォ
+------------------*/  
+.heroinfo {
+    margin-bottom: 200px;
+} 
+.heroinfo-body {
+    display: flex;
+}
+.textbox {
+    height: auto;
+    width: 65%;
+}
+.imgbox {
+    flex: 1;
+}
+.imgbox img {
+    height: auto;
+    max-width: 100%;
+}
+.heroinfo h2 {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.heroinfo .p1 {
+    font-size: 1.2rem;
+    margin-bottom: 100px;
+}
+.heroinfo .p2 {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/*------------------
+     ディテール
+------------------*/ 
+.detail-info {
+    display: flex;
+    gap: 20px;
+}
+.detail-info .card {
+    border: 1px solid ;
+    flex: 1;
+}
+.detail-content {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.detail-content h2 {
+    font-size: 2rem;
+}
+
+/*------------------
      サイドバー
-------------------*/     
+------------------*/    
+
 /*------------ ロゴ----------- */
 .logo-box {
     margin: 30px;
@@ -288,4 +346,73 @@ aside ul li .icon svg {
 }
 .sns-box ul li:nth-child(3) {
     margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------
+      フッター
+------------------*/
+
+footer {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.D-footer-logo {
+    margin: 10px auto;
+  
+
+}
+.D-footer-logo {
+    margin-top: 80px;
+}
+.D-footer-logo a {
+    text-decoration: none;
+    font-size: 20px;
+}
+.D-footer-SNS {
+    margin: 10px auto;
+    display: flex;
+}
+.D-footer-SNS ul {
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.D-footer-SNS img {
+    filter: brightness(0) invert(1);
+    width: 20px;
+    height: auto;
+}
+
+/* こぴーらいと */
+.D-copyright {
+    margin-bottom: 30px;
+    font-size: 10px;
 }

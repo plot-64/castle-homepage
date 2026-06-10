@@ -98,7 +98,7 @@
                         <li>主要エリア・庭園の公開</li>
                         <li>当日窓口での受付可能</li>
                       </ul>
-                      <a href="pages/tore/tour.html" class="btn-more">詳しく見る</a>
+                      <a href="pages/tore/tour.php" class="btn-more">詳しく見る</a>
                     </div>
                 </article>
 
@@ -111,7 +111,7 @@
                         <li>非公開エリアへの特別入場</li>
                         <li>完全予約制（少人数催行）</li>
                       </ul>
-                      <a href="post/2026/..." class="btn-more">詳しく見る</a>
+                      <a href="pages/tore/tour.php" class="btn-more">詳しく見る</a>
                     </div>
                 </article>
 
@@ -125,7 +125,7 @@
                         <li>館内ランタン貸出あり</li>
                         <li>事前予約必須</li>
                       </ul>
-                      <a href="post/2026/..." class="btn-more">詳しく見る</a>
+                      <a href="pages/tore/tour.php" class="btn-more">詳しく見る</a>
                     </div>
                 </article>
  
@@ -491,44 +491,7 @@
 
 <!-- フッター -->
  <!-- ロゴ SNSリンク 権利関係? -->
-<footer>
-  <!-- rogo -->
-  <div class="D-footer-logo">
-    <a class="logo" href="#">
-      Château du Silence
-    </a>
-  </div>
-  <!-- sns link -->
-  <div class="D-footer-SNS">
-    <ul>
-      <li>
-        <a href="">
-          <img src="images/index/SNSアイコン/instagram.svg" alt="">
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <img src="images/index/SNSアイコン/x.svg" alt="">
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <img src="images/index/SNSアイコン/reddit.svg" alt="">
-        </a>
-      </li>
-    </ul>
-  </div>
-  <!-- コピーライト -->
-  <div class="D-copyright">
-   &copy; 2023-2026 Château du Silence
-  </div>
-  <div class="D-copyright"></div>
-
-</footer>
-
-
-
-
+<?php include "footer.php" ?>
 
 
 
