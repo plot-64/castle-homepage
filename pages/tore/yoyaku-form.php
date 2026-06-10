@@ -2,8 +2,12 @@
 
 
 // 今の時間
-date_default_timezone_set('Asia/Tokyo')
+date_default_timezone_set('Asia/Tokyo');
 
+// 予約時間リスト
+$time = ['10:00', '10:30', '11:00', '11:30', 
+            '13:00', '13:30', '14:00', '14:30', 
+            '15:00', '15:30', '16:00'];
 
 // 今日の日+1 +2 +3 .... 
 
@@ -37,10 +41,22 @@ date_default_timezone_set('Asia/Tokyo')
       </select>
   
     </div>
-  
+   
+
+
+    <!-- 時間選択 -->
     <div class="time-select">
       <label for="">2 入場時間枠</label>
-      <select name="" id=""></select>
+      <select name="time" id="time">
+        <option value="">選択してください</option>
+        <!-- 選択肢ループ -->
+        <?php
+         foreach ($time as $output_time){
+          echo '<option value="' . $output_time . '">' . $output_time . '</option>';
+         }
+         ?>
+      </select>
+       
     </div>
   
     <div class="ticket-select">

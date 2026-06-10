@@ -97,7 +97,7 @@
 
 
 
-         
+
     </main>
 
 
@@ -122,9 +122,9 @@
       <div class="menu-box">
         <ul>
           <li>
-            <a href="#1">
+            <a href="../../index.php">
               <div class="menu-text-box">
-                <span class="jp">シランス城とは</span>
+                <span class="jp">HOMEへ戻る</span>
                 <span class="en">About</span>
               </div>
               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -138,7 +138,7 @@
           <li>
            <a href="#2">
              <div class="menu-text-box">
-                <span class="jp">見学コース</span>
+                <span class="jp">入場料金</span>
                 <span class="en">Tour</span>
              </div>
               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -150,9 +150,9 @@
            </a>
           </li>
           <li>
-           <a href="#3">
+           <a href="index.php">
               <div class="menu-text-box">
-                <span class="jp">館内案内</span>
+                <span class="jp">予約フォーム</span>
                 <span class="en">Inside</span>
               </div>
               <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
