@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+
+/* フォームのなかの文字 白だと見えねぇーー */
+.yoyaku-form select{
+  color: black;
+}
+.yoyaku-form option{
+  color: black;
+}

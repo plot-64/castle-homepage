@@ -6,7 +6,14 @@
     /* 100%を超えないように */
     box-sizing: border-box;
     color: #ffffff;
+
 }
+
+/* body {
+    color: rgba(0, 0, 0, 0.5); 
+} 文字全部ちょっと透明にしたかった 上手くいかない為あとで*/
+
+
 /* サイドバーの構造 */
 .yoko {
   display: flex;
@@ -15,6 +22,8 @@
   flex: 1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../../images/index/index3.jpg'); 
   background-size: cover;
+  background-attachment: fixed ;
+
 }
 aside {
   width: 152px;
@@ -107,7 +116,10 @@ section {
     margin-bottom: 100px;
 }
 .detail-content h2 {
+    margin: 0 auto;
     font-size: 2rem;
+    border-bottom: 1px solid;
+    width: fit-content; /* コレ便利なのに毎回忘れるわ 要素が縮むからマージン0autoつける*/
 }
 
 /*------------------
@@ -156,11 +168,6 @@ aside ul li .icon {
 }
 
 
-
-
-
-/* 多分いらないCSSが大量に生き残ってる */
-/* どうすんだろうねコレ */
 
 /* --------------------------------------- */
 aside {

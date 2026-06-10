@@ -30,7 +30,6 @@ if (str_ends_with($yobidasiPHP, 'index.php')){
 }
 ?>
 
-<!-- きたー! -->
 
 
 
@@ -38,17 +37,17 @@ if (str_ends_with($yobidasiPHP, 'index.php')){
     <ul>
       <li>
         <a href="">
-          <img src="<?php echo $inst_pass ?>" alt="">
+          <img src="<?php echo $inst_pass ?>" alt="インスタアイコン">
         </a>
       </li>
       <li>
         <a href="">
-          <img src="<?php echo $x_pass ?>" alt="">
+          <img src="<?php echo $x_pass ?>" alt="Xアイコン">
         </a>
       </li>
       <li>
         <a href="">
-          <img src="<?php echo $reddit_pass ?>" alt="">
+          <img src="<?php echo $reddit_pass ?>" alt="レディットアイコン">
         </a>
       </li>
     </ul>

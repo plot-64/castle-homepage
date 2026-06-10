@@ -79,15 +79,34 @@
             </div>
           </div>
          </section>
-<!----------------
-   予約フォーム
------------------>       
-        <section class="section-tour-reserve">
-          <div class="div-tour-reserve-box">
-              <!-- フォーム要素(form, input, select, buttonなど)を配置 -->
-          </div>
-        </section>
+
+
+         <!----------------
+            予約フォーム
+         ----------------->       
+         <?php include "yoyaku-form.php" ?>
+
+
+
+
+
+
+
+
+
+
+
+
+         
     </main>
+
+
+
+
+
+
+
+
     <aside>
       <!-- ロゴ -->
       <div class="logo-box">
@@ -200,5 +219,7 @@
 </div>
 <!-- フッター -->
 <?php include "../../footer.php" ?>
+
+
 </body>
 </html>
