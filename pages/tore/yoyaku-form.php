@@ -1,5 +1,13 @@
 <?php
 
+$is_completed = false;
+
+// 送信が終わったか確認用
+if (isset($_POST['submit_reservation'])) {
+
+    $is_completed = true;
+}
+
 
 // 今の時間
 date_default_timezone_set('Asia/Tokyo');
@@ -15,10 +23,51 @@ $time = ['10:00', '10:30', '11:00', '11:30',
 
 ?>
 <link rel="stylesheet" href="yoyaku-form.css">
+
+
+
+
+
+<!-- 完了状態 -->
+
+<?php if ($is_completed): ?>
+    <div class="reservation-thanks">
+      <h2>ご予約が完了いたしました</h2>
+      <p class="thanks-message">
+        この度は入場日時指定整理券をご予約いただき、誠にありがとうございます。<br>
+        当日はお気をつけてご来館ください。
+      </p>
+      
+      <div class="summary-box">
+        <p>ご来館日：<?php echo ($_POST['day']); ?></p>
+        <p>入場時間：<?php echo ($_POST['time']); ?></p>
+        <p>枚数：<?php echo ($_POST['ticket']); ?>枚</p>
+        <p>お名前：<?php echo ($_POST['name']); ?> 様</p>
+        <p>メール：<?php echo ($_POST['email']); ?></p>
+        <p>お電話：<?php echo ($_POST['tel']); ?></p>
+      </div>
+    </div>
+    <form>
+      <button type="submit" class="cancel">予約を取り消す</button>
+    </form>
+   
+<!-- ーーーーーーーーーーーーーーーーーーーーーーー -->
+
+
+
+<!-- 完了してないならフォーム表示 -->
+<?php else: ?>
+
+
+
+
+
+
 <!-- 予約フォーム -->
+
 <section class="yoyaku-form">
   <h2>入場日時指定 整理券のご予約</h2>
-  <form action="">
+  <form action="" method="post">
   
     <!-- 日付選択 -->
     <div class="day-select">
@@ -61,24 +110,46 @@ $time = ['10:00', '10:30', '11:00', '11:30',
   
     <div class="ticket-select">
       <label for="">3 チケット枚数の内訳</label>
-      <select name="" id=""></select>
+      <select name="ticket" id="ticket">
+
+      <?php
+         for ($ticket = 1; $ticket < 11; $ticket++ ){
+
+
+          //  呼び出す命令
+           echo '<option value="' . $ticket . '">' . $ticket .'枚'.'</option>';
+         }
+         
+         
+         ?>
+
+
+
+
+
+      </select>
     </div>
   
     <div class="name-input">
       <label for="">代表者様のお名前</label>
-      <input type="text">
+      <input type="text" name="name">
     </div>
   
     <div class="email-input">
       <label for="">Emailアドレス</label>
-      <input type="text">
+      <input type="email" name="email">
     </div>
   
     <div class="phone-input">
       <label for="">ご連絡先番号</label>
-      <input type="text">
+      <input type="tel" name="tel">
+    </div>
+
+    <div class="submit-box">
+      <button type="submit" name="submit_reservation">時間枠 優先整理券を発行する（無料）</button>
     </div>
   
   
   </form>
+<?php endif; ?>
 </section>
