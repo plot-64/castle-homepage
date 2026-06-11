@@ -16,3 +16,167 @@
 }
 
 
+
+
+
+
+/* ==========================================
+   追加の予約フォームデザイン
+   ========================================== */
+
+/* フォーム全体のコンテナ */
+.yoyaku-form {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* フォーム内のすべての要素にbox-sizingを適用 */
+.yoyaku-form * {
+  box-sizing: border-box;
+}
+
+/* タイトル (H2) */
+.yoyaku-form h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+/* 各入力項目のグループ */
+.yoyaku-form div[class$="-select"],
+.yoyaku-form div[class$="-input"] {
+  margin-bottom: 20px;
+}
+
+/* ラベル */
+.yoyaku-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #444444;
+  font-size: 0.95rem;
+}
+
+/* セレクトボックスと入力フィールドの共通スタイル */
+.yoyaku-form select,
+.yoyaku-form input[type="text"],
+.yoyaku-form input[type="email"],
+.yoyaku-form input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* フォーカス時の挙動 */
+.yoyaku-form select:focus,
+.yoyaku-form input:focus {
+  border-color: #007bff;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* 送信ボタンのコンテナ */
+.yoyaku-form .submit-box {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* 送信ボタン */
+.yoyaku-form button[name="submit_reservation"] {
+  width: 100%;
+  padding: 16px;
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.yoyaku-form button[name="submit_reservation"]:hover {
+  background-color: #218838;
+}
+
+/* ------------------------------------------
+   完了画面 (reservation-thanks) のデザイン
+   ------------------------------------------ */
+.reservation-thanks {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+}
+
+.reservation-thanks h2 {
+  text-align: center;
+  color: #28a745;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.thanks-message {
+  text-align: center;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 30px;
+}
+
+/* 予約内容の確認ボックス */
+.summary-box {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-box p {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px dashed #dee2e6;
+  color: #333333;
+}
+
+.summary-box p:last-child {
+  border-bottom: none;
+}
+
+/* 予約取り消しフォームとボタン */
+form:has(.cancel) {
+  max-width: 600px;
+  margin: -20px auto 40px auto;
+  text-align: center;
+}
+
+.cancel {
+  background: none;
+  border: none;
+  color: #dc3545;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.2s;
+}
+
+.cancel:hover {
+  color: #bd2130;
+}

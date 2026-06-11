@@ -103,25 +103,123 @@ section {
 /*------------------
      ディテール
 ------------------*/ 
-.detail-info {
-    display: flex;
-    gap: 20px;
-}
-.detail-info .card {
-    border: 1px solid ;
-    flex: 1;
-}
-.detail-content {
-    text-align: center;
-    margin-bottom: 100px;
-}
-.detail-content h2 {
-    margin: 0 auto;
-    font-size: 2rem;
-    border-bottom: 1px solid;
-    width: fit-content; /* コレ便利なのに毎回忘れるわ 要素が縮むからマージン0autoつける*/
+.detail {
+    margin-bottom: 200px;
 }
 
+.detail-content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.detail-content h2 {
+    margin: 0 auto 20px;
+    font-size: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    width: fit-content; 
+    padding-bottom: 10px;
+}
+
+.detail-content p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+.detail-info {
+    display: flex;
+    gap: 30px;
+    align-items: stretch; /* カードの高さを揃える */
+}
+
+/* 各カードの共通設定 */
+.detail-info .card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    flex: 1;
+    padding: 30px 25px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* カーソルを乗せたときに少し浮き上がらせる */
+.detail-info .card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.detail-info .card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.detail-info .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.detail-info .card strong {
+    font-size: 1.1rem;
+    color: #e0e0e0; /* 強調文字を少し目立たせる */
+}
+
+/* 1つめのカード */
+.notice-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(219, 68, 85, 0.1); /* 警告用にほんのり赤みをプラス */
+    border-left: 3px solid #db4455;
+}
+
+.notice-box p {
+    margin: 0;
+    font-size: 0.85rem !important;
+    opacity: 0.9;
+}
+
+.notice-box p:first-child {
+    font-weight: bold;
+    color: #db4455;
+    margin-bottom: 5px;
+}
+
+/* 2つめのカード */
+.detail-info .card dl {
+    margin: 0;
+}
+
+.detail-info .card dt {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 料金の補足*/
+.detail-info .card dt span {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    font-weight: normal;
+    margin-top: 2px;
+}
+
+.detail-info .card dd {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: right;
+    color: #d4af37;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
 /*------------------
      サイドバー
 ------------------*/    
@@ -198,7 +296,18 @@ aside ul li a{
     transition: 0.5s;
 }
 
+.yoyaku-form form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* gap: 10px; */
 
+}
+.yoyaku-form form>div {
+    width: calc(100% / 3);
+    padding: 0 10px;
+    
+}
 
 aside {
     height: 100vh;
